@@ -219,10 +219,22 @@
     .hilo{animation:none;width:120px}
   }
 
+  /* Burger (solo móvil) */
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:10px;margin-left:auto}
+  .burger span{display:block;width:22px;height:2px;background:var(--tinta);margin:5px 0;transition:transform .25s,opacity .25s}
+  .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
   /* Responsive */
   @media (max-width:900px){
     .wrap{padding:0 22px}
-    .nav-links a:not(.nav-cta){display:none}
+    .burger{display:block}
+    .nav-links{position:fixed;top:72px;left:0;right:0;background:var(--hueso);border-bottom:1px solid var(--linea);flex-direction:column;align-items:flex-start;gap:0;padding:8px 22px 18px;display:none}
+    .nav-links.open{display:flex}
+    .nav-links a{display:block;width:100%;padding:14px 0;font-size:12px;border-bottom:1px solid var(--linea)}
+    .nav-links a.active{border-bottom:1px solid var(--oro)}
+    .nav-links .nav-cta{border:1px solid var(--grafito);text-align:center;margin-top:14px;padding:14px 18px}
     .hero .claim{left:22px}
     .frentes-grid,.recorrido,.somos,.contacto-grid,.qa-grid,.problema-grid,.tridente,.tri-claves,.core-grid,.core-strip,.familia-grid{grid-template-columns:1fr;gap:36px}
     .coste{border-left:none;border-top:1px solid var(--linea);padding-left:0;padding-top:28px}
@@ -240,7 +252,10 @@
 <nav>
   <div class="wrap nav-in">
     <a class="logo" href="#top" aria-label="LIORENIA, inicio"><img src="assets/logo-black-transpa.png" alt="LIORENIA"></a>
-    <div class="nav-links">
+    <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="menu-movil">
       <a href="#top" data-spy="top">Inicio</a>
       <a href="#problema" data-spy="problema">Problema</a>
       <a href="#modelo" data-spy="modelo">Modelo</a>
@@ -482,6 +497,19 @@
     for (const e of entries){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } }
   },{threshold:.12});
   document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+  // Menú móvil
+  const burger = document.querySelector('.burger');
+  const navLinks = document.getElementById('menu-movil');
+  burger.addEventListener('click', ()=>{
+    const open = navLinks.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  });
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+    navLinks.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+  }));
 
   // Scrollspy: gold underline on the active section's nav link
   const spyLinks = document.querySelectorAll('.nav-links a[data-spy]');
