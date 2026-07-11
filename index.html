@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIORENIA — Tecnología propia para que la empresa funcione mejor</title>
+<meta name="description" content="LIORENIA ayuda a las empresas a dejar de trabajar para el software: automatización, conexión de sistemas, IA para decidir y herramientas de gestión propias — adaptado a cada empresa, en semanas, y con el dato en sus manos.">
+<meta property="og:title" content="LIORENIA — The intelligence of opportunity">
+<meta property="og:description" content="Tecnología propia para que la empresa funcione mejor: automatización, conexión de sistemas, IA para decidir y herramientas de gestión — adaptado a cada empresa, en semanas.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://liorenia.com">
+<meta property="og:image" content="https://liorenia.com/assets/marca-papeleria.jpg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --hueso:#FDFDFB; --grafito:#0A0A0A; --oro:#C9A96E; --oro-osc:#B2872C;
+    --tinta:#141412; --suave:#5C5B57; --linea:#E4E2DB; --linea-osc:rgba(255,255,255,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;font-weight:300;color:var(--tinta);background:var(--hueso);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 40px}
+
+  /* Wordmark */
+  .wordmark{font-family:'Manrope',sans-serif;font-weight:600;letter-spacing:.42em;text-decoration:none;white-space:nowrap}
+  .wordmark .e{position:relative}
+  .wordmark .e::after{content:"";position:absolute;left:.06em;top:-.28em;width:.62em;height:2px;background:var(--oro)}
+
+  /* Nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(253,253,251,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+  nav .wordmark{font-size:17px;color:var(--tinta)}
+  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--suave);transition:color .2s}
+  .nav-links a:hover,.nav-links a:focus-visible{color:var(--oro-osc)}
+  .nav-cta{border:1px solid var(--grafito);padding:10px 18px;color:var(--tinta) !important;transition:all .2s}
+  .nav-cta:hover,.nav-cta:focus-visible{background:var(--grafito);color:var(--hueso) !important}
+  a:focus-visible{outline:2px solid var(--oro-osc);outline-offset:3px}
+
+  /* Eyebrow */
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--oro-osc);display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--oro)}
+
+  /* Hero */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;background:#EFEBE2}
+  .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center}
+  .hero .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(253,253,251,.92) 0%,rgba(253,253,251,.72) 38%,rgba(253,253,251,0) 68%)}
+  .hero .wrap{position:relative;z-index:2;padding-top:120px;padding-bottom:80px}
+  .hero h1{font-family:'Manrope',sans-serif;font-weight:800;font-size:clamp(38px,5.4vw,64px);line-height:1.08;letter-spacing:-.02em;max-width:620px;margin-bottom:26px}
+  .hero h1 .gold{color:var(--oro-osc)}
+  .hero .tesis{font-family:'Manrope',sans-serif;font-weight:600;font-size:clamp(17px,2vw,21px);letter-spacing:-.005em;color:var(--tinta);max-width:560px;margin:0 0 18px}
+  .hero .lede{font-size:17px;color:var(--suave);max-width:540px;margin-bottom:38px}
+  .hilo{width:0;height:1px;background:var(--oro);margin:0 0 34px;animation:draw 1.4s ease-out .3s forwards}
+  @keyframes draw{to{width:120px}}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap}
+  .btn{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:16px 26px;border:1px solid var(--grafito);transition:all .2s;display:inline-block}
+  .btn.solid{background:var(--grafito);color:var(--hueso)}
+  .btn.solid:hover,.btn.solid:focus-visible{background:transparent;color:var(--tinta)}
+  .btn.ghost{color:var(--tinta)}
+  .btn.ghost:hover,.btn.ghost:focus-visible{background:var(--grafito);color:var(--hueso)}
+  .hero .claim{position:absolute;bottom:28px;left:40px;z-index:2;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--suave)}
+
+  /* Statement band */
+  .statement-band{position:relative;padding:130px 0;overflow:hidden}
+  .statement-band img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+  .statement-band .wrap{position:relative;z-index:2}
+  .statement{font-family:'Manrope',sans-serif;font-weight:600;font-size:clamp(24px,3.2vw,36px);line-height:1.4;max-width:820px}
+  .statement .gold{color:var(--oro-osc)}
+  .statement-band .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);margin-top:22px}
+
+  /* Sections */
+  section.block{padding:110px 0}
+  h2{font-family:'Manrope',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,42px);line-height:1.15;letter-spacing:-.015em;margin-bottom:18px;max-width:640px}
+  .sub{font-size:17px;color:var(--suave);max-width:600px;margin-bottom:14px}
+
+  /* Frentes */
+  .frentes-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:40px}
+  .frente{display:grid;grid-template-columns:52px 1fr;gap:0 20px;padding:26px 0;border-top:1px solid var(--linea)}
+  .frentes-col .frente:last-child{border-bottom:1px solid var(--linea)}
+  .frente .num{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--oro-osc);padding-top:4px}
+  .frente h3{font-family:'Manrope',sans-serif;font-weight:800;font-size:18px;margin-bottom:6px}
+  .frente p{font-size:15px;margin-bottom:4px}
+  .frente .dolor{font-family:'Manrope',sans-serif;font-weight:600;font-size:14px;color:var(--suave)}
+  .frente .dolor::before{content:"→ ";color:var(--oro)}
+  .frentes-media{position:sticky;top:110px}
+  .frentes-media img{width:100%;height:auto}
+  .frentes-media .pie{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--suave);margin-top:14px;line-height:1.8}
+
+  /* Full-bleed separator */
+  .bleed{position:relative;height:52vh;min-height:360px;overflow:hidden}
+  .bleed img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .bleed .over{position:absolute;inset:0;display:flex;align-items:flex-end}
+  .bleed .over .wrap{padding-bottom:44px;width:100%}
+  .bleed .line{font-family:'Manrope',sans-serif;font-weight:600;font-size:clamp(18px,2.4vw,26px);color:var(--tinta);background:rgba(253,253,251,.88);display:inline-block;padding:16px 24px;max-width:560px}
+
+  /* Recorrido */
+  .recorrido{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:40px}
+  .paso{display:grid;grid-template-columns:56px 1fr;gap:0 20px;margin-bottom:34px}
+  .paso .n{font-family:'Manrope',sans-serif;font-weight:800;font-size:30px;color:var(--oro)}
+  .paso h3{font-family:'Manrope',sans-serif;font-weight:800;font-size:18px;margin-bottom:6px}
+  .paso p{font-size:15px}
+  .recorrido-media img{width:100%;height:auto}
+  .nota-dato{border-left:2px solid var(--oro);padding:12px 0 12px 20px;font-family:'Manrope',sans-serif;font-weight:600;font-size:15.5px;max-width:520px;margin-top:6px}
+
+  /* Productos */
+  .prod-destacado{border:1px solid var(--oro);padding:30px 28px;display:grid;grid-template-columns:220px 1fr;gap:0 30px;align-items:start;margin:44px 0 18px}
+  .pn{font-family:'Manrope',sans-serif;font-weight:800;font-size:20px}
+  .pt{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-osc);margin-top:4px}
+  .prod-destacado p{font-size:15px}
+  .quien{font-size:13.5px;color:var(--suave);font-style:italic;margin-top:8px}
+  .productos-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+  .prod{border:1px solid var(--linea);padding:26px 24px;background:#fff}
+  .prod .pn{font-size:18px}
+  .prod p{font-size:14px;margin-top:12px}
+  .union{font-family:'Manrope',sans-serif;font-weight:600;font-size:16px;border-left:2px solid var(--oro);padding-left:20px;margin-top:34px;max-width:660px}
+  .resto{font-size:14px;color:var(--suave);margin-top:22px;max-width:720px}
+  .productos-media{margin:50px 0 0}
+  .productos-media img{width:100%;height:auto}
+
+  /* Dark panel — hablando claro */
+  .dark{background:var(--grafito);color:var(--hueso)}
+  .dark .eyebrow{color:var(--oro)}
+  .dark h2{color:var(--hueso)}
+  .qa-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 46px;margin-top:36px}
+  .qa-item{padding:22px 0;border-top:1px solid var(--linea-osc)}
+  .qa-item .q{font-family:'Manrope',sans-serif;font-weight:800;font-size:16px;margin-bottom:6px}
+  .qa-item .a{font-size:14.5px;color:rgba(255,255,255,.72)}
+  .qa-item .a::before{content:"— "}
+
+  /* Quiénes somos */
+  .somos{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:10px}
+  .somos img{width:100%;height:auto}
+  .dicho{display:flex;gap:16px;align-items:baseline;margin-top:26px}
+  .dicho .tag{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--suave);white-space:nowrap}
+  .dicho em{font-family:'Manrope',sans-serif;font-weight:600;font-style:normal;font-size:17px}
+  .dicho em::before{content:"— "}
+  .dicho .oro{color:var(--oro-osc)}
+
+  /* Contacto */
+  .contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:10px}
+  .contacto-grid img{width:100%;height:auto}
+  .compromiso{border-left:2px solid var(--oro);padding-left:20px;font-size:15px;color:var(--suave);max-width:520px;margin:26px 0 36px}
+  .mail{font-family:'Manrope',sans-serif;font-weight:800;font-size:clamp(20px,2.6vw,28px);text-decoration:none;border-bottom:2px solid var(--oro);padding-bottom:4px;transition:color .2s}
+  .mail:hover,.mail:focus-visible{color:var(--oro-osc)}
+  .contacto-meta{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--suave);margin-top:30px;line-height:2.2}
+
+  /* Footer */
+  footer{background:var(--grafito);color:var(--hueso);padding:40px 0}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  footer .wordmark{font-size:15px;color:var(--hueso)}
+  footer .claim{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--oro)}
+  footer .legal{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:rgba(255,255,255,.5)}
+
+  /* Reveal */
+  .rev{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+  .rev.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .rev{opacity:1;transform:none;transition:none}
+    .hilo{animation:none;width:120px}
+  }
+
+  /* Responsive */
+  @media (max-width:900px){
+    .wrap{padding:0 22px}
+    .nav-links a:not(.nav-cta){display:none}
+    .hero .claim{left:22px}
+    .frentes-grid,.recorrido,.somos,.contacto-grid,.qa-grid{grid-template-columns:1fr;gap:36px}
+    .frentes-media{position:static;order:-1}
+    .productos-grid{grid-template-columns:1fr}
+    .prod-destacado{grid-template-columns:1fr;gap:14px}
+    section.block{padding:76px 0}
+    .hero{min-height:78vh}
+    .hero .veil{background:linear-gradient(180deg,rgba(253,253,251,.92) 0%,rgba(253,253,251,.78) 55%,rgba(253,253,251,.3) 100%)}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="wordmark" href="#top" aria-label="LIORENIA, inicio">LIOR<span class="e">E</span>NIA</a>
+    <div class="nav-links">
+      <a href="#que-hacemos">Qué hacemos</a>
+      <a href="#como-trabajamos">Cómo trabajamos</a>
+      <a href="#productos">Productos</a>
+      <a class="nav-cta" href="#contacto">Hablemos</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img class="bg" src="assets/hero.jpg" alt="" fetchpriority="high">
+  <div class="veil" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="eyebrow">LIORENIA · Tecnología propia</div>
+    <h1>Hacemos que las empresas <span class="gold">funcionen mejor</span>.</h1>
+    <div class="hilo" aria-hidden="true"></div>
+    <p class="tesis">Decidir mejor, desbloquear antes y crecer con criterio.</p>
+    <p class="lede">Para dejar de trabajar para el software: automatizamos lo repetitivo, conectamos los sistemas que hoy están separados, convertimos datos y documentos en decisiones útiles y ordenamos la gestión diaria — con tecnología propia adaptada a la estructura real de cada empresa.</p>
+    <div class="cta-row">
+      <a class="btn solid" href="#como-trabajamos">Cómo empezamos</a>
+      <a class="btn ghost" href="#que-hacemos">Qué hacemos</a>
+    </div>
+  </div>
+  <div class="claim">The intelligence of opportunity</div>
+</header>
+
+<div class="statement-band">
+  <img class="bg" src="assets/fondo-suave.jpg" alt="" loading="lazy">
+  <div class="wrap rev">
+    <p class="statement">La tecnología se adapta a la empresa, <span class="gold">y no la empresa a la tecnología</span>.</p>
+    <p class="tag">La regla que ordena todo lo demás</p>
+  </div>
+</div>
+
+<section class="block" id="que-hacemos">
+  <div class="wrap">
+    <div class="eyebrow rev">Qué hacemos</div>
+    <h2 class="rev">Cinco frentes. Cada empresa entra por el que más le duele.</h2>
+    <p class="sub rev">Las empresas están llenas de trabajo que no debería hacer una persona: datos que se teclean dos veces, sistemas que no se hablan, información que existe pero nadie encuentra, y gestión que vive en Excel, correo y memoria. Cada frente resuelve una de esas fugas.</p>
+    <div class="frentes-grid">
+      <div class="frentes-col">
+        <div class="frente rev"><div class="num">01</div><div><h3>Automatizar y ejecutar</h3><p>Automatizaciones llave en mano y agentes que ejecutan trabajo real.</p><p class="dolor">Lo que hoy hacen personas copiando y pegando, mañana lo hace el sistema.</p></div></div>
+        <div class="frente rev"><div class="num">02</div><div><h3>Conectar</h3><p>Los sistemas que ya tiene la empresa se hablan entre sí: el ERP, la contabilidad, la web, lo antiguo con lo nuevo.</p><p class="dolor">Sin islas de datos ni doble teclado.</p></div></div>
+        <div class="frente rev"><div class="num">03</div><div><h3>Saber y decidir</h3><p>IA sobre los documentos y procesos de la empresa, y cuadros de mando vivos.</p><p class="dolor">Que la información que ya existe conteste preguntas y sostenga decisiones.</p></div></div>
+        <div class="frente rev"><div class="num">04</div><div><h3>Gestionar el negocio</h3><p>Las herramientas del día a día — clientes, personas y selección — adaptadas a la estructura real.</p><p class="dolor">El negocio deja de vivir en Excel, correo y memoria.</p></div></div>
+        <div class="frente rev"><div class="num">05</div><div><h3>Estar presente</h3><p>Webs premium construidas con IA, rápidas y con la marca intacta.</p><p class="dolor">Presencia a la altura, sin proyectos eternos.</p></div></div>
+      </div>
+      <div class="frentes-media rev">
+        <img src="assets/circulo-roca.jpg" alt="Composición editorial de la marca LIORENIA: formas de piedra y una vara dorada" loading="lazy">
+        <p class="pie">Todo comparte motor — LIO Core — y todo empieza igual: por una lectura corta de dónde está la oportunidad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bleed rev">
+  <img src="assets/conectar.jpg" alt="Dos esculturas de piedra unidas por un hilo dorado: los sistemas de la empresa, conectados" loading="lazy">
+  <div class="over"><div class="wrap"><span class="line">Todo se conecta de origen, porque todo comparte la misma base.</span></div></div>
+</div>
+
+<section class="block" id="como-trabajamos">
+  <div class="wrap">
+    <div class="eyebrow rev">Cómo trabajamos</div>
+    <h2 class="rev">Un recorrido en tres pasos. Sin proyectos eternos.</h2>
+    <div class="recorrido">
+      <div>
+        <div class="paso rev"><div class="n">1</div><div><h3>Entramos entendiendo</h3><p>El Mapa de Desbloqueo: una lectura corta, con precio cerrado, de dónde pierde la empresa tiempo, control o dinero — y qué desbloquearía primero. Si seguimos adelante juntos, se descuenta íntegramente.</p></div></div>
+        <div class="paso rev"><div class="n">2</div><div><h3>Implantamos</h3><p>Producto y tecnología que ya existen, ajustados a la estructura real: sus sociedades, sus permisos, su proceso. Semanas, no meses.</p></div></div>
+        <div class="paso rev"><div class="n">3</div><div><h3>Lo mantenemos vivo</h3><p>Cuota mensual: alojado, seguro, actualizado y evolucionando. Sin licencias por usuario — crecer no penaliza.</p></div></div>
+        <p class="nota-dato rev">Y el dato siempre es del cliente: <span style="color:var(--oro-osc)">exportable, nunca atrapado</span>.</p>
+      </div>
+      <div class="recorrido-media rev">
+        <img src="assets/detalle-oro.jpg" alt="Vara dorada entre piedra natural y mármol negro: precisión sobre lo que ya existe" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bleed rev">
+  <img src="assets/separador-dunas.jpg" alt="" loading="lazy">
+</div>
+
+<section class="block" id="productos">
+  <div class="wrap">
+    <div class="eyebrow rev">Productos · Gestionar el negocio</div>
+    <h2 class="rev">Herramientas propias para el día a día.</h2>
+    <p class="sub rev">La familia con la que más empresas empiezan: clientes, personas y selección sobre una misma base, conectados de origen.</p>
+
+    <div class="prod-destacado rev">
+      <div><div class="pn">LIO less</div><div class="pt">Fábrica de automatizaciones</div></div>
+      <div><p>Automatizaciones llave en mano y agentes que ejecutan trabajo real — y además la pieza que multiplica nuestra propia velocidad de despliegue.</p><p class="quien">Para quien paga sueldos por copiar, pegar y volver a teclear.</p></div>
+    </div>
+
+    <div class="productos-grid">
+      <div class="prod rev"><div class="pn">LIO Desk</div><div class="pt">CRM</div><p>La relación comercial con la estructura real: multiempresa, permisos, pipeline.</p><p class="quien">Para quien gestiona el negocio con Excel, correo y memoria.</p></div>
+      <div class="prod rev"><div class="pn">LIO People</div><div class="pt">Expediente de personas</div><p>Histórico, alertas y confidencialidad auditada en un expediente único.</p><p class="quien">Para quien tiene la información de su gente en carpetas y cabezas.</p></div>
+      <div class="prod rev"><div class="pn">LIO Talent</div><div class="pt">Selección</div><p>Confidencialidad por rol, trazabilidad completa y RGPD dentro del flujo.</p><p class="quien">Para quien selecciona por correo y cruza los dedos.</p></div>
+    </div>
+
+    <p class="union rev">Un candidato entra por Talent, pasa a ser empleado en People y su actividad comercial vive en Desk — conectados de origen, porque comparten motor.</p>
+    <p class="resto rev">Y la familia sigue: <strong>LIO Flow</strong> y <strong>LIO Pilot</strong> (automatizar y ejecutar), <strong>LIO Bridge</strong> (conectar), <strong>LIO Mind</strong>, <strong>LIO Lens</strong> y <strong>LIO Watch</strong> (saber y decidir), <strong>LIO Front</strong> (estar presente).</p>
+
+    <div class="productos-media rev">
+      <img src="assets/tres-piezas.jpg" alt="Tres piezas escultóricas sobre piedra: tres productos, una misma base" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="block dark">
+  <div class="wrap">
+    <div class="eyebrow rev">Hablando claro</div>
+    <h2 class="rev">Las preguntas que nos hacen. Y lo que respondemos.</h2>
+    <div class="qa-grid">
+      <div class="qa-item rev"><div class="q">"¿Sois una consultora?"</div><div class="a">No: compañía de producto y tecnología propia. La consultoría eterna es justo lo que le evitamos al cliente.</div></div>
+      <div class="qa-item rev"><div class="q">"¿En qué os diferenciáis de las suites de siempre?"</div><div class="a">Ellas venden plantillas por usuario; nosotros implantamos sobre motor propio, adaptado a tu estructura, con el dato en tu propiedad y sin pagar más por crecer.</div></div>
+      <div class="qa-item rev"><div class="q">"¿Cuánto tardáis?"</div><div class="a">Semanas, no meses: la tecnología ya existe; lo que hacemos es ajustarla a ti.</div></div>
+      <div class="qa-item rev"><div class="q">"¿Y si mañana no estáis?"</div><div class="a">El dato es tuyo y es exportable. Nunca queda atrapado.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="eyebrow rev">Quiénes somos</div>
+    <div class="somos">
+      <div>
+        <h2 class="rev">Sin currículum.</h2>
+        <p class="rev">Las dos mitades que este negocio exige: la mitad de negocio — años de estrategia, operaciones y dirección comercial vividos dentro de las empresas — y la mitad técnica — la construcción del motor y los productos. Alrededor, un socio tecnológico con capacidad de desarrollo y una red de contactos que nos abre las puertas donde ya se nos espera.</p>
+        <div class="dicho rev"><span class="tag">Dicho al cliente</span><em>Hemos vivido el problema desde dentro y hemos construido <span class="oro">lo que nos habría gustado tener</span>.</em></div>
+      </div>
+      <div class="rev"><img src="assets/libreta.jpg" alt="Libreta y tarjeta de visita con la marca LIORENIA" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contacto" style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow rev">Contacto</div>
+    <div class="contacto-grid">
+      <div>
+        <h2 class="rev">Una primera conversación para valorar encaje.</h2>
+        <p class="sub rev">Si vemos un encaje real, activamos el Mapa de Desbloqueo. Si no, os lo diremos con la misma claridad con la que trabajamos.</p>
+        <p class="compromiso rev">Nuestro compromiso es simple: menos discurso, más lectura útil y más capacidad de ejecución — con IA propia donde aporta velocidad y criterio humano donde realmente importa.</p>
+        <a class="mail rev" href="mailto:hola@liorenia.com">hola@liorenia.com</a>
+        <p class="contacto-meta rev">Madrid, España<br>The intelligence of opportunity</p>
+      </div>
+      <div class="rev"><img src="assets/papeleria-tarjetas.jpg" alt="Papelería de LIORENIA sobre piedra: tarjeta clara y sobre negro" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span class="wordmark">LIOR<span class="e">E</span>NIA</span>
+    <span class="claim">The intelligence of opportunity</span>
+    <span class="legal">© 2026 LIORENIA · hola@liorenia.com</span>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries)=>{
+    for (const e of entries){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } }
+  },{threshold:.12});
+  document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
