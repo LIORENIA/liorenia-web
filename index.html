@@ -28,15 +28,14 @@
   a{color:inherit}
   .wrap{max-width:1560px;margin:0 auto;padding:0 clamp(22px,5vw,110px)}
 
-  /* Wordmark */
-  .wordmark{font-family:'Manrope',sans-serif;font-weight:600;letter-spacing:.42em;text-decoration:none;white-space:nowrap}
-  .wordmark .e{position:relative}
-  .wordmark .e::after{content:"";position:absolute;left:.06em;top:-.28em;width:.62em;height:2px;background:var(--oro)}
+  /* Logo */
+  .logo{display:inline-flex;align-items:center}
+  .logo img{height:17px;width:auto;display:block}
+  footer .logo img{height:15px}
 
   /* Nav */
   nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(253,253,251,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:none}
-  nav .wordmark{font-size:17px;color:var(--tinta)}
   .nav-links{display:flex;gap:34px;align-items:center}
   .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--suave);transition:color .2s;padding-bottom:4px;border-bottom:2px solid transparent}
   .nav-links a:hover,.nav-links a:focus-visible{color:var(--oro-osc)}
@@ -205,7 +204,6 @@
   /* Footer */
   footer{background:var(--grafito);color:var(--hueso);padding:40px 0}
   .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-  footer .wordmark{font-size:15px;color:var(--hueso)}
   footer .claim{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--oro)}
   footer .legal{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:rgba(255,255,255,.5)}
   footer .legal-links{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em}
@@ -241,7 +239,7 @@
 
 <nav>
   <div class="wrap nav-in">
-    <a class="wordmark" href="#top" aria-label="LIORENIA, inicio">LIOR<span class="e">E</span>NIA</a>
+    <a class="logo" href="#top" aria-label="LIORENIA, inicio"><img src="assets/logo-black-transpa.png" alt="LIORENIA"></a>
     <div class="nav-links">
       <a href="#top" data-spy="top">Inicio</a>
       <a href="#problema" data-spy="problema">Problema</a>
@@ -472,7 +470,7 @@
 
 <footer>
   <div class="wrap foot">
-    <span class="wordmark">LIOR<span class="e">E</span>NIA</span>
+    <span class="logo"><img src="assets/logo-white-transpa.png" alt="LIORENIA"></span>
     <span class="claim">The intelligence of opportunity</span>
     <span class="legal">© 2026 LIORENIA · hola@liorenia.com</span>
     <span class="legal-links"><a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Privacidad</a> · <a href="cookies.html">Cookies</a></span>
