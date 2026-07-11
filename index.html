@@ -118,6 +118,11 @@
   .quien{font-size:13.5px;color:var(--suave);font-style:italic;margin-top:8px}
   .productos-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
   .prod{border:1px solid var(--linea);padding:26px 24px;background:#fff}
+  a.prod{display:block;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
+  a.prod:hover,a.prod:focus-visible{border-color:var(--oro);transform:translateY(-2px)}
+  .prod .ver{display:inline-block;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-osc)}
+  .plink{color:inherit;text-decoration:none;border-bottom:1px solid var(--oro)}
+  .plink:hover,.plink:focus-visible{color:var(--oro-osc)}
   .prod .pn{font-size:18px}
   .prod p{font-size:14px;margin-top:12px}
   .union{font-family:'Manrope',sans-serif;font-weight:600;font-size:16px;border-left:2px solid var(--oro);padding-left:20px;margin-top:34px;max-width:660px}
@@ -203,6 +208,9 @@
   footer .wordmark{font-size:15px;color:var(--hueso)}
   footer .claim{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--oro)}
   footer .legal{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:rgba(255,255,255,.5)}
+  footer .legal-links{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em}
+  footer .legal-links a{color:rgba(255,255,255,.5);text-decoration:none}
+  footer .legal-links a:hover,footer .legal-links a:focus-visible{color:var(--oro)}
 
   /* Reveal */
   .rev{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
@@ -388,9 +396,9 @@
     </div>
 
     <div class="productos-grid">
-      <div class="prod rev"><div class="pn">LIO Desk</div><div class="pt">CRM</div><p>La relación comercial con la estructura real: multiempresa, permisos, pipeline.</p><p class="quien">Para quien gestiona el negocio con Excel, correo y memoria.</p></div>
-      <div class="prod rev"><div class="pn">LIO People</div><div class="pt">Expediente de personas</div><p>Histórico, alertas y confidencialidad auditada en un expediente único.</p><p class="quien">Para quien tiene la información de su gente en carpetas y cabezas.</p></div>
-      <div class="prod rev"><div class="pn">LIO Talent</div><div class="pt">Selección</div><p>Confidencialidad por rol, trazabilidad completa y RGPD dentro del flujo.</p><p class="quien">Para quien selecciona por correo y cruza los dedos.</p></div>
+      <a class="prod rev" href="productos/lio-desk.html" target="_blank" rel="noopener"><div class="pn">LIO Desk</div><div class="pt">CRM</div><p>La relación comercial con la estructura real: multiempresa, permisos, pipeline.</p><p class="quien">Para quien gestiona el negocio con Excel, correo y memoria.</p><span class="ver">Ver producto →</span></a>
+      <a class="prod rev" href="productos/lio-people.html" target="_blank" rel="noopener"><div class="pn">LIO People</div><div class="pt">Expediente de personas</div><p>Histórico, alertas y confidencialidad auditada en un expediente único.</p><p class="quien">Para quien tiene la información de su gente en carpetas y cabezas.</p><span class="ver">Ver producto →</span></a>
+      <a class="prod rev" href="productos/lio-talent.html" target="_blank" rel="noopener"><div class="pn">LIO Talent</div><div class="pt">Selección</div><p>Confidencialidad por rol, trazabilidad completa y RGPD dentro del flujo.</p><p class="quien">Para quien selecciona por correo y cruza los dedos.</p><span class="ver">Ver producto →</span></a>
     </div>
 
     <p class="union rev">Un candidato entra por Talent, pasa a ser empleado en People y su actividad comercial vive en Desk — conectados de origen, porque comparten motor.</p>
@@ -401,7 +409,7 @@
         <div class="linea"><p class="linea-tag">Automatizar y ejecutar</p><p class="linea-prods">LIO less · LIO Flow · LIO Pilot</p><p>La fábrica de automatizaciones llave en mano, los flujos que produce y los agentes que ejecutan.</p></div>
         <div class="linea"><p class="linea-tag">Conectar</p><p class="linea-prods">LIO Bridge</p><p>Integración de sistemas antiguos y herramientas que no se hablan entre sí.</p></div>
         <div class="linea"><p class="linea-tag">Saber y decidir</p><p class="linea-prods">LIO Mind · LIO Lens · LIO Watch</p><p>IA documental y asistentes, lectura real de procesos y cuadros de mando vivos.</p></div>
-        <div class="linea"><p class="linea-tag">Gestionar el negocio</p><p class="linea-prods">LIO Desk · LIO People · LIO Talent</p><p>CRM, expediente de personas y selección, sobre una misma base y conectados de origen con el resto.</p></div>
+        <div class="linea"><p class="linea-tag">Gestionar el negocio</p><p class="linea-prods"><a class="plink" href="productos/lio-desk.html" target="_blank" rel="noopener">LIO Desk</a> · <a class="plink" href="productos/lio-people.html" target="_blank" rel="noopener">LIO People</a> · <a class="plink" href="productos/lio-talent.html" target="_blank" rel="noopener">LIO Talent</a></p><p>CRM, expediente de personas y selección, sobre una misma base y conectados de origen con el resto.</p></div>
         <div class="linea"><p class="linea-tag">Estar presente</p><p class="linea-prods">LIO Front</p><p>Webs premium construidas con IA, con velocidad y sin renunciar a la marca.</p></div>
       </div>
       <aside class="capas rev">
@@ -467,6 +475,7 @@
     <span class="wordmark">LIOR<span class="e">E</span>NIA</span>
     <span class="claim">The intelligence of opportunity</span>
     <span class="legal">© 2026 LIORENIA · hola@liorenia.com</span>
+    <span class="legal-links"><a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Privacidad</a> · <a href="cookies.html">Cookies</a></span>
   </div>
 </footer>
 
